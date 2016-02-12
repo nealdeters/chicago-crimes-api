@@ -1,0 +1,24 @@
+<h1>Chicago Crimes</h1>
+
+<table>
+    <thead>
+      <tr>
+        <td><h2>Case Number</h2></td>
+        <td><h2>Type</h2></td>
+        <td><h2>Description</h2></td>
+        <td><h2>Date</h2></td>
+      </tr>
+    <thead>
+  <% @crimes.each do |crime| %>
+    <% if crime["ward"] == "43" %> 
+      <tbody>
+        <tr>
+          <td><h5><%= crime["case_number"] %></h5></td>
+          <td><h5><%= crime["primary_type"] %></h5></td>
+          <td><h5><%= crime["description"]%></h5></td>
+          <td><h5><%= crime["date"]%></h5></td>
+        </tr>
+      </tbody>
+    <% end %>
+  <% end %>
+</table>
